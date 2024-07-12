@@ -1,0 +1,100 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+main{
+    padding: 20px;
+}
+h1 {
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+h2{
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #135D66;
+}
+h3{
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #003C43;
+}
+footer{
+    background-color: #003C43;
+    text-align: center;
+    color: white;
+    padding: 5px;
+    font-weight: bold;
+}
+.gambar-artikel{
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    object-position: center;
+}
+.gambar-dokum{
+    width: 200px;
+}
+.card{
+    box-shadow: 0px 1px 5px #003C43;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.jumbotron{
+    background-color: #003C43;
+    color: #E3FEF7;
+    text-align: center;
+    padding: 60px;
+    font-size: 20px;
+}
+header{
+    display: inline;
+}
+nav{
+    background-color: #135D66;
+    padding: 5px;
+    position: sticky;
+    top: 0;
+}
+nav ul li{ 
+    display: inline;
+    margin-right: 30px;
+}
+nav ul li a {
+    color: #E3FEF7;
+    text-decoration: none;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+html{
+    scroll-behavior: smooth;
+}
+main{
+    display: flex;
+    gap: 20px;
+}
+main #content{
+    flex-grow: 6;
+}
+main #aside{
+    flex-grow: 1;
+}
+.tabel-container{
+    display: inline-block;
+}
+figcaption {
+    text-align: center;
+}
+.tabel-aside{
+    text-align: left;
+}
+article a{
+    text-decoration: none;
+}
