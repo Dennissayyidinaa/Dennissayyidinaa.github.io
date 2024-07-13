@@ -1,57 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Form Pemesanan</title>
-<link rel="stylesheet" href="pemesanan.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poetsen+One&family=Poppins:wght@700&display=swap" rel="stylesheet">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Pemesanan</title>
+    <link rel="stylesheet" href="pemesanan.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poetsen+One&family=Poppins:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Pesan Makanan dan Minuman</h2>
+      <form id="myForm" action="#" method="post">
+        <div class="form-group">
+          <label for="nama">Nama:</label>
+          <input type="text" id="nama" name="nama" required />
+        </div>
+        <div class="form-group">
+          <label for="makanan">Makanan:</label>
+          <select id="makanan" name="makanan" required>
+            <option value="">Pilih Makanan</option>
+            <option value="Nasi Putih">Nasi Putih</option>
+            <option value="Indomie">Indomie</option>
+            <option value="Nasi telur orak arik / dadar">
+              Nasi telur orak arik / dadar
+            </option>
+            <option value="Magelangan">Magelangan</option>
+            <option value="Omlette">Omlette</option>
+            <option value="Nasi Telur + Nasi">Nasi Telur + Nasi</option>
+            <option value="Nasi Telur + Baso">Nasi Telur + Baso</option>
+            <option value="Nasi Goreng">Nasi Goreng</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="minuman">Minuman:</label>
+          <select id="minuman" name="minuman" required>
+            <option value="">Pilih Minuman</option>
+            <option value="Teajus">Teajus</option>
+            <option value="Kopi Hitam / Susu">Kopi Hitam / Susu</option>
+            <option value="Nutrisari">Nutrisari</option>
+            <option value="GoodDay">GoodDay</option>
+            <option value="Chocolatos">Chocolatos</option>
+            <option value="Es Jeruk Peras">Es Jeruk Peras</option>
+            <option value="Red Velvet">Red Velvet</option>
+            <option value="Choco Cream">Choco Cream</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="catatan">Catatan Tambahan:</label>
+          <textarea id="catatan" name="catatan"></textarea>
+        </div>
+        <button type="submit">Pesan Sekarang</button>
+      </form>
+      <div class="overlay" id="overlay"></div>
+      <div class="popup" id="popup">
+        <p>Pesanan diterima, Silahkan ke kasir untuk melakukan pembayaran.</p>
+        <button id="closePopup">Close</button>
+      </div>
+    </div>
 
-<div class="container">
-  <h2>Pesan Makanan dan Minuman</h2>
-  <form action="#" method="post">
-    <div class="form-group">
-      <label for="nama">Nama:</label>
-      <input type="text" id="nama" name="nama" required>
-    </div>
-    <div class="form-group">
-      <label for="makanan">Makanan:</label>
-      <select id="makanan" name="makanan" required>
-        <option value="">Pilih Makanan</option>
-        <option value="Nasi Putih">Nasi Putih</option>
-        <option value="Indomie">Indomie</option>
-        <option value="Nasi telur orak arik / dadar">Nasi telur orak arik / dadar</option>
-        <option value="Magelangan">Magelangan</option>
-        <option value="Omlette">Omlette</option>
-        <option value="Nasi Telur + Nasi">Nasi Telur + Nasi</option>
-        <option value="Nasi Telur + Baso">Nasi Telur + Baso</option>
-        <option value="Nasi Goreng">Nasi Goreng</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="minuman">Minuman:</label>
-      <select id="minuman" name="minuman" required>
-        <option value="">Pilih Minuman</option>
-        <option value="Teajus">Teajus</option>
-        <option value="Kopi Hitam / Susu">Kopi Hitam / Susu</option>
-        <option value="Nutrisari">Nutrisasi</option>
-        <option value="GoodDay">GoodDay</option>
-        <option value="Chocolatos">Chocolatos</option>
-        <option value="Es Jeruk Peras">Es Jeruk Peras</option>
-        <option value="Red Velvet">Red Velvet</option>
-        <option value="Choco Cream">Choco Cream</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="catatan">Catatan Tambahan:</label>
-      <textarea id="catatan" name="catatan"></textarea>
-    </div>
-    <button type="submit">Pesan Sekarang</button>
-  </form>
-</div>
-</body>
+    <script>
+      document
+        .getElementById("myForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          document.getElementById("overlay").style.display = "block";
+          document.getElementById("popup").style.display = "block";
+        });
+
+      document
+        .getElementById("closePopup")
+        .addEventListener("click", function () {
+          document.getElementById("overlay").style.display = "none";
+          document.getElementById("popup").style.display = "none";
+        });
+    </script>
+  </body>
 </html>
